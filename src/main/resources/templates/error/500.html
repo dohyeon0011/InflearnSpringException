@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>500 오류 화면 스프링 부트 제공</h2>
+    </div>
+
+    <div>
+        <p>오류 화면 입니다.</p>
+    </div>
+
+    <ul>
+        <li>오류 정보</li>
+        <!-- /* BasicErrorController가 model에 담아서 뷰에 전달함.  */-->
+        <ul>
+            <li th:text="|timestamp: ${timestamp}|"></li> <!-- /* 타임스태프 */-->
+            <li th:text="|path: ${path}|"></li> <!-- /* 클라이언트 요청 경로('/hello') */-->
+            <li th:text="|status: ${status}|"></li> <!-- /* HTTP 상태 코드 */-->
+            <li th:text="|message: ${message}|"></li> <!-- /* 에러 메시지(Validation failed for object='data'. Error count: 1) */-->
+            <li th:text="|error: ${error}|"></li> <!-- /* 에러 타입(Bad Request)  */-->
+            <li th:text="|exception: ${exception}|"></li> <!-- /* org.springframework.validation.BindException */-->
+            <li th:text="|errors: ${errors}|"></li> <!-- /* Errors(BindingResult) */-->
+            <li th:text="|trace: ${trace}|"></li> <!-- /* 예외 trace, 근데 얜 사용자에게 안 보여줌.(오류 관련 내부 정보를 노출하면 보안에 위험해져서, properties에서 설정 가능) */-->
+        </ul>
+        </li>
+    </ul>
+
+    <hr class="my-4">
+
+</div> <!-- /container -->
+
+</body>
+</html>
