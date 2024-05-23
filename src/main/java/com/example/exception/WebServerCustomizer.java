@@ -6,7 +6,7 @@ import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component 스프링 부트가 기본으로 제공하는 기본 오류 페이지 설정을 사용하기 위해 주석(스프링 부트는 기본으로 /error로 기본 경로 설정)
 public class WebServerCustomizer implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
 
     @Override
