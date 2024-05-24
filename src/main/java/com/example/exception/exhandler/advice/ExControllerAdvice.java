@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 // @RestControllerAdvice(assignableTypes = {ConfigurationKeys.class, ConfigurationKeys.class}) -> 직접 컨트롤러 클래스 지정
 // 여러 컨트롤러에서 발생하는 오류들을 여기서 한번에 처리(대상으로 지정한 여러 컨트롤러에 @ExceptionHandler, @InitBinder 기능을 부여함) -> 근데 지금은 대상을 지정 안해서 어떤 컨트롤러에서 발생하는 오류들을 여기서 잡아줌(글로벌 적용)
 @Slf4j
-@RestControllerAdvice // @ControllerAdvice + @ResponseBody
+@RestControllerAdvice(basePackages = "com.example.exception.api") // @ControllerAdvice + @ResponseBody
 public class ExControllerAdvice {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
